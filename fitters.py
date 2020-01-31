@@ -542,6 +542,7 @@ class iFSPS(Fitter):
         return  self.sampler.flatchain
 
 
+    #JAMES
     def _emcee2(self, lnpost_fn, lnpost_args, lnpost_kwargs, nwalkers=100, burnin=100, niter=1000, silent=True): 
     	''' Runs MCMC (using emcee) for a given log posterior function and implemented adaptive convergence test
     	'''
@@ -599,65 +600,7 @@ class iFSPS(Fitter):
     		else: print(f'Did not converge; PSRF: {PSRF}, Iteration: {niter}')
 
     	return self.sampler.flatchain 
-    	'''
-        import scipy.optimize as op
-        import emcee
-        ndim = len(self.priors) 
-
-        # get initial theta by minimization 
-        if not silent: print('getting initial theta') 
-        dprior = np.array(self.priors)[:,1] - np.array(self.priors)[:,0]  
-
-        _lnpost = lambda *args: -2. * lnpost_fn(*args, **lnpost_kwargs) 
-
-        min_result = op.minimize(
-                _lnpost, 
-                np.average(np.array(self.priors), axis=1), # guess the middle of the prior 
-                args=lnpost_args, 
-                method='BFGS', 
-                options={'eps': 0.01 * dprior, 'maxiter': 100})
-        tt0 = min_result['x'] 
-        if not silent: print('initial theta = [%s]' % ', '.join([str(_t) for _t in tt0])) 
-    
-        # initial sampler 
-        self.sampler = emcee.EnsembleSampler(nwalkers, ndim, lnpost_fn, 
-                args=lnpost_args, kwargs=lnpost_kwargs)
-        # initial walker positions 
-        p0 = [tt0 + 1.e-4 * dprior * np.random.randn(ndim) for i in range(nwalkers)]
-
-        # burn in 
-        if not silent: print('running burn-in') 
-        pos, prob, state = self.sampler.run_mcmc(p0, burnin)
-        self.sampler.reset()
-
-        # run mcmc 
-        if not silent: print('running main chain')
-        
-        convergent = False
-        
-        for idx in range(niter//STEP):
-            print(idx)
-            #JAMES: stores position here
-            pos, prob, state = self.sampler.run_mcmc(pos,STEP) 
-            #JAMES: Evaluate PSRF after each 1000 run until the chain converges
-            result = self.sampler.flatchain   #JAMES: return the result
-            convergent,PSRF = self.GRD(result,nwalkers,niter)
-
-            if convergent: 
-                print(f'Converged; PSRF: {PSRF}, Iteration: {(idx+1)*niter//STEP}')
-                break
-
-        #If the loop did not break(if the chain is not convergent), run the remaining iteration
-        if not convergent:
-            self.sampler.run_mcmc(pos,niter%STEP) 
-            convergent,PSRF = self.GRD(result,nwalkers,niter)
-            
-            if convergent: print(f'Converged; PSRF: {PSRF}, Iteration: {niter}')
-            
-            else: print(f'Did not converge; PSRF: {PSRF}, Iteration: {niter}')
-
-		return  self.sampler.flatchain
-        '''
+    	
 
     def _lnPost_spectrophoto(self, tt_arr, wave_obs, flux_obs, flux_ivar_obs, photo_obs, photo_ivar_obs, zred, mask=None, filters=None, bands=None, prior_shape='flat'): 
         ''' calculate the log posterior 
