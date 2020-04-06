@@ -9,6 +9,6 @@ https://www.desi.lbl.gov/
 https://en.wikipedia.org/wiki/Dark_Energy_Spectroscopic_Instrument
 
 Before the survey gets commissioned, we generate noiseless spectra and forward model them to DESI spectra. We test our inference
-methods here to check if inferred cosmological parameters are close to the truths and if the inference are done efficiently. Here, I perform the mock challenge of Galaxy/Quasar Physics Group by Dr. Changhoon Hahn,
+methods here to check if inferred cosmological parameters are close to the truths and if the inference are done efficiently. Here, I perform the mock challenge of Galaxy/Quasar Physics Group written by Dr. Changhoon Hahn (http://changhoonhahn.github.io/),
 to improve/supplement the inference methods.
 
