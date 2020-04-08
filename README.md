@@ -12,3 +12,8 @@ Before the survey gets commissioned, we generate noiseless spectra and forward m
 methods here to check if inferred cosmological parameters are close to the truths and if the inference are done efficiently. Here, I perform the mock challenge of Galaxy/Quasar Physics Group written by Dr. Changhoon Hahn (http://changhoonhahn.github.io/),
 to improve/supplement the inference methods.
 
+This repo contains
+1. Gelman-Rubin Convergence Diagnostic Implementaiton Test
+2. Adaptive Convergence Diagnostic Implementaiton Test
+3. Optimization Method Test
+4. Scattering Magnitude Test
