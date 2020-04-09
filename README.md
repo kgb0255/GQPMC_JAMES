@@ -1,4 +1,4 @@
-# GQPMC_JAMES
+# GQPMC_v1_JAMES
 GQP Mock Challenge James
 
 DESI survey stands for Dark Energy Spectroscopic Instrument survey which will observe tens of millions of galaxies
