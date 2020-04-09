@@ -1,7 +1,7 @@
 # GQPMC_v1_JAMES
 GQP Mock Challenge James
 
-Completed in April 9th.
+Completed in April 9th 2020.
 
 DESI survey stands for Dark Energy Spectroscopic Instrument survey which will observe tens of millions of galaxies
 for cosmological studies. 
