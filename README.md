@@ -19,5 +19,5 @@ This repo contains
 4. Scattering Magnitude Test
 
 Back-up Link:
-gqpmc_v1: https://drive.google.com/drive/folders/1YeFxVwdtEgLBnvkCo1MHX7OXcBXDK-X1
-gqpmc_v1_data: https://drive.google.com/drive/folders/1BjuBOOlUGfKtt_liOiYSr-LHGktN58un
+* gqpmc_v1: https://drive.google.com/drive/folders/1YeFxVwdtEgLBnvkCo1MHX7OXcBXDK-X1
+* gqpmc_v1_data: https://drive.google.com/drive/folders/1BjuBOOlUGfKtt_liOiYSr-LHGktN58un
