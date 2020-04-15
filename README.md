@@ -1,5 +1,5 @@
 # GQPMC_v1_JAMES
-GQP Mock Challenge James
+GQP Mock Challenge - James
 
 Completed in April 9th 2020.
 
